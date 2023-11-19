@@ -1,0 +1,374 @@
+{
+  "info": {
+    "_postman_id": "your-postman-id",
+    "name": "Your API Name",
+    "description": "Description of your API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Departments",
+      "item": [
+        {
+          "name": "Get All Departments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl_local}}/departments",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["departments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Department by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl_local}}/departments/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["departments", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Department",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id_source\": 1,\n  \"organization_id\": 1,\n  \"name\": \"IT Department\",\n  \"budget\": 100000,\n  \"data\": \"{}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseurl_local}}/departments",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["departments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Department",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id_source\": 1,\n  \"organization_id\": 1,\n  \"name\": \"Updated IT Department\",\n  \"budget\": 120000,\n  \"data\": \"{}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseurl_local}}/departments/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["departments", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Department",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseurl_local}}/departments/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["departments", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Licenses",
+      "item": [
+        {
+          "name": "Get All Licenses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl_local}}/licenses",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["licenses"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get License by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl_local}}/licenses/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["licenses", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create License",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"source\": \"self\",\n  \"id_source\": 1,\n  \"organization_id\": 1,\n  \"seller\": \"ABC Inc\",\n  \"application\": \"LicenseApp\",\n  \"department_id\": 1,\n  \"billing_cycle\": \"monthly\",\n  \"issue_date\": \"2023-01-01\",\n  \"total_licenses_count\": 100,\n  \"used_licenses_count\": 50,\n  \"inactive_licenses_count\": 0,\n  \"total_amount_paid\": 5000,\n  \"per_user_amount_paid\": 100,\n  \"total_wastage_amount\": 0,\n  \"data\": \"{}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseurl_local}}/licenses",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["licenses"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update License",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"source\": \"self\",\n  \"id_source\": 1,\n  \"organization_id\": 1,\n  \"seller\": \"Updated ABC Inc\",\n  \"application\": \"Updated LicenseApp\",\n  \"department_id\": 1,\n  \"billing_cycle\": \"yearly\",\n  \"issue_date\": \"2023-02-01\",\n  \"total_licenses_count\": 150,\n  \"used_licenses_count\": 75,\n  \"inactive_licenses_count\": 5,\n  \"total_amount_paid\": 7500,\n  \"per_user_amount_paid\": 110,\n  \"total_wastage_amount\": 100,\n  \"data\": \"{}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseurl_local}}/licenses/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["licenses", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete License",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseurl_local}}/licenses/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["licenses", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Employees",
+      "item": [
+        {
+          "name": "Get All Employees",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl_local}}/employees",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["employees"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Employee by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl_local}}/employees/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["employees", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Employee",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id_source\": 1,\n  \"organization_id\": 1,\n  \"department_id\": 1,\n  \"first_name\": \"John\",\n  \"last_name\": \"Doe\",\n  \"avatar_url\": \"\",\n  \"email_address\": \"john.doe@example.com\",\n  \"mobile\": \"1234567890\",\n  \"role\": \"Developer\",\n  \"status\": \"active\",\n  \"data\": \"{}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseurl_local}}/employees",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["employees"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Employee",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id_source\": 1,\n  \"organization_id\": 1,\n  \"department_id\": 1,\n  \"first_name\": \"Updated John\",\n  \"last_name\": \"Updated Doe\",\n  \"avatar_url\": \"\",\n  \"email_address\": \"john.doe@example.com\",\n  \"mobile\": \"1234567890\",\n  \"role\": \"Senior Developer\",\n  \"status\": \"active\",\n  \"data\": \"{}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseurl_local}}/employees/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["employees", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Employee",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseurl_local}}/employees/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["employees", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Usage Logs",
+      "item": [
+        {
+          "name": "Get All Usage Logs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl_local}}/usage-logs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["usage-logs"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Usage Log by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl_local}}/usage-logs/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["usage-logs", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Usage Log",
+          "request": {
+            "method": "POST",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employee_id\": 1,\n  \"session_time_stamp\": \"2023-01-01T12:00:00Z\",\n  \"session_duration_in_sec\": 3600,\n  \"data\": \"{}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseurl_local}}/usage-logs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["usage-logs"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Usage Log",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {"key": "Content-Type", "value": "application/json"}
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employee_id\": 1,\n  \"session_time_stamp\": \"2023-01-02T12:00:00Z\",\n  \"session_duration_in_sec\": 4500,\n  \"data\": \"{}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseurl_local}}/usage-logs/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["usage-logs", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Usage Log",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseurl_local}}/usage-logs/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["usage-logs", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
