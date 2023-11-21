@@ -5,6 +5,7 @@ import {
   Column,
   ForeignKey,
   DataType,
+  BelongsTo,
 } from "sequelize-typescript";
 import Department from "./Department";
 
@@ -27,11 +28,17 @@ export default class License extends Model {
   seller!: string;
 
   @Column
-  application!: string;
+  application_name!: string;
+
+  @Column
+  application_slug!: string;
 
   @ForeignKey(() => Department)
   @Column
   department_id!: number;
+
+  @BelongsTo(() => Department)
+  department!: Department;
 
   @Column(DataType.ENUM("monthly", "yearly"))
   billing_cycle!: "monthly" | "yearly";

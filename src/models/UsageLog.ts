@@ -5,6 +5,7 @@ import {
   Column,
   ForeignKey,
   DataType,
+  BelongsTo,
 } from "sequelize-typescript";
 import Employee from "./Employee";
 
@@ -20,6 +21,9 @@ export default class UsageLog extends Model {
   @ForeignKey(() => Employee)
   @Column
   employee_id!: number;
+
+  @BelongsTo(() => Employee)
+  employee!: Employee;
 
   @Column
   session_time_stamp!: Date;

@@ -4,10 +4,10 @@ import * as licenseController from "../controllers/license.controller";
 
 const router = express.Router();
 
-router.get("/licenses", licenseController.getAllLicenses);
-router.get("/licenses/:id", licenseController.getLicenseById);
-router.post("/licenses", licenseController.createLicense);
-router.put("/licenses/:id", licenseController.updateLicense);
-router.delete("/licenses/:id", licenseController.deleteLicense);
+router.get("/", licenseController.getAllLicenses);
+router.get("/:id", licenseController.getLicenseById);
+router.post("/", licenseController.createLicense);
+router.put("/:id", licenseController.updateLicense);
+router.delete("/:id", licenseController.deleteLicense);
 
 export default router;

@@ -5,6 +5,7 @@ import {
   Column,
   ForeignKey,
   DataType,
+  BelongsTo,
 } from "sequelize-typescript";
 import Department from "./Department";
 
@@ -23,6 +24,9 @@ export default class Employee extends Model {
   @ForeignKey(() => Department)
   @Column
   department_id!: number;
+
+  @BelongsTo(() => Department)
+  department!: Department;
 
   @Column
   first_name!: string;

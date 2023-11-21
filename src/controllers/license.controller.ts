@@ -42,7 +42,8 @@ export const createLicense = async (
     id_source,
     organization_id,
     seller,
-    application,
+    application_name,
+    application_slug,
     department_id,
     billing_cycle,
     issue_date,
@@ -60,7 +61,8 @@ export const createLicense = async (
       id_source,
       organization_id,
       seller,
-      application,
+      application_name,
+      application_slug,
       department_id,
       billing_cycle,
       issue_date,
@@ -89,7 +91,8 @@ export const updateLicense = async (
     id_source,
     organization_id,
     seller,
-    application,
+    application_name,
+    application_slug,
     department_id,
     billing_cycle,
     issue_date,
@@ -108,7 +111,8 @@ export const updateLicense = async (
       license.id_source = id_source;
       license.organization_id = organization_id;
       license.seller = seller;
-      license.application = application;
+      license.application_name = application_name;
+      license.application_slug = application_slug;
       license.department_id = department_id;
       license.billing_cycle = billing_cycle;
       license.issue_date = issue_date;

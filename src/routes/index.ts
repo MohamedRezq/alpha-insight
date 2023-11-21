@@ -4,12 +4,14 @@ import departmentRoutes from "./department.routes";
 import licenseRoutes from "./license.routes";
 import employeeRoutes from "./employee.routes";
 import usageLogRoutes from "./usage-log.routes";
+import statsHomeRoutes from "./stats.routes";
 
 const router = express.Router();
 
-router.use("/", departmentRoutes);
-router.use("/", licenseRoutes);
-router.use("/", employeeRoutes);
-router.use("/", usageLogRoutes);
+router.use("/departments", departmentRoutes);
+router.use("/licenses", licenseRoutes);
+router.use("/employees", employeeRoutes);
+router.use("/usage-logs", usageLogRoutes);
+router.use("/stats/home", statsHomeRoutes);
 
 export default router;
