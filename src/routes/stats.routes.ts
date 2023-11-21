@@ -1,11 +1,13 @@
 // src/routes/employee.routes.ts
 import express from "express";
 import * as statsController from "../controllers/stats.controller";
+import { authMiddleware } from "../middleware/authentication.middleware";
 
 const router = express.Router();
 
 router.post(
   "/get-top-spending-departments",
+  authMiddleware,
   statsController.getTopSpendingDepartments
 );
 

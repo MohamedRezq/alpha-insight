@@ -1,10 +1,11 @@
 // src/routes/license.routes.ts
 import express from "express";
 import * as licenseController from "../controllers/license.controller";
+import { authMiddleware } from "../middleware/authentication.middleware";
 
 const router = express.Router();
 
-router.get("/", licenseController.getAllLicenses);
+router.get("/", authMiddleware, licenseController.getAllLicenses);
 router.get("/:id", licenseController.getLicenseById);
 router.post("/", licenseController.createLicense);
 router.put("/:id", licenseController.updateLicense);

@@ -57,8 +57,6 @@ export const getTopSpendingDepartments = async (
       },
     });
 
-    console.log("licenses: ", licenses);
-
     // Calculate total spending per department
     const departmentSpendingMap = new Map<string, number>();
     const departmentChartDataMap = new Map<

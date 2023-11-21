@@ -12,6 +12,6 @@ router.use("/departments", departmentRoutes);
 router.use("/licenses", licenseRoutes);
 router.use("/employees", employeeRoutes);
 router.use("/usage-logs", usageLogRoutes);
-router.use("/stats/home", statsHomeRoutes);
+router.use("/stats", statsHomeRoutes);
 
 export default router;

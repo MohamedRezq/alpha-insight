@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import { logRequests } from "./middleware/logging.middleware";
 import { rateLimiter } from "./middleware/rate-limit.middleware";
-import { authenticate } from "./middleware/authentication.middleware";
+// import { authMiddleware } from "./middleware/authentication.middleware";
 import routes from "./routes";
 
 const app = express();
