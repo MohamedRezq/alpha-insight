@@ -10,7 +10,7 @@ SET NAMES utf8mb4;
 DROP TABLE IF EXISTS `departments`;
 CREATE TABLE `departments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_source` int(11) DEFAULT NULL,
+  `id_source` varchar(255) DEFAULT NULL,
   `organization_id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `budget` int(11) NOT NULL,
@@ -25,11 +25,12 @@ DROP TABLE IF EXISTS `licenses`;
 CREATE TABLE `licenses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `source` enum("self","finance","sso"),
-  `id_source` int(11) DEFAULT NULL,
+  `id_source` varchar(255) DEFAULT NULL,
   `organization_id` int(11) NOT NULL,
   `seller` varchar(255) DEFAULT NULL,
-  `application_name` varchar(255) DEFAULT NULL,
-  `application_slug` varchar(255) DEFAULT NULL,
+  `organization_application_id` int(11) NOT NULL,
+  `currency` varchar(255) DEFAULT NULL,
+  `is_paid` boolean DEFAULT true,
   `department_id` int(11) NOT NULL,
   `billing_cycle` enum("monthly","yearly") DEFAULT NULL,
   `issue_date` datetime NOT NULL,
@@ -50,7 +51,7 @@ CREATE TABLE `licenses` (
 DROP TABLE IF EXISTS `employees`;
 CREATE TABLE `employees` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_source` int(11) DEFAULT NULL,
+  `id_source` varchar(255) DEFAULT NULL,
   `organization_id` int(11) NOT NULL,
   `department_id` int(11) NOT NULL,
   `first_name` varchar(255) DEFAULT NULL,
@@ -71,7 +72,7 @@ CREATE TABLE `employees` (
 DROP TABLE IF EXISTS `usage_logs`;
 CREATE TABLE `usage_logs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_source` int(11) DEFAULT NULL,
+  `id_source` varchar(255) DEFAULT NULL,
   `employee_id` int(11) NOT NULL,
   `session_time_stamp` datetime DEFAULT NULL,
   `session_duration_in_sec` int(11) DEFAULT NULL,

@@ -81,6 +81,20 @@ export const createLicense = async (
   }
 };
 
+export const bulkCreateLicenses = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const licensesData = req.body;
+  try {
+    const newLicenses = await License.bulkCreate(licensesData);
+    res.status(201).json(newLicenses);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+};
+
 export const updateLicense = async (
   req: Request,
   res: Response
